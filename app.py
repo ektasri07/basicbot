@@ -6,6 +6,7 @@ import traceback
 from datetime import datetime
 from http import HTTPStatus
 
+
 from aiohttp import web
 from aiohttp.web import Request, Response, json_response
 from botbuilder.core import (
@@ -57,7 +58,6 @@ ADAPTER.on_turn_error = on_error
 
 # Create the Bot
 BOT = EchoBot()
-
 
 # Listen for incoming requests on /api/messages
 async def messages(req: Request) -> Response:

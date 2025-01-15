@@ -1,2 +1,5 @@
 botbuilder-integration-aiohttp>=4.15.0
 gunicorn
+pandas
+azure.identity
+azure.mgmt.costmanagement
