@@ -44,12 +44,9 @@ class EchoBot(ActivityHandler):
             subscription_id = '7b9338d2-e8dc-405b-91d7-ef8fe30b97b6'
             cost_management_url = f"https://management.azure.com/subscriptions/{subscription_id}/providers/Microsoft.CostManagement/query?api-version=2021-10-01"
             
-       # Get the access token
-        try:
+            # Get the access token
             token = credential.get_token("https://management.azure.com/.default").token
             print(f"Access Token: {token}")  # Print the token for debugging (remove in production)
-        except Exception as e:
-            raise Exception(f"Failed to retrieve access token: {e}")
 
             # Set the headers
             headers = {
