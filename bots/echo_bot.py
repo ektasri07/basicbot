@@ -4,7 +4,6 @@ import pandas as pd
 from datetime import datetime, timedelta
 import requests
 from azure.identity import DefaultAzureCredential
-import openai
 import re
 import calendar
 
