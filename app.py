@@ -6,6 +6,7 @@ import traceback
 from datetime import datetime
 from http import HTTPStatus
 
+
 from aiohttp import web
 from aiohttp.web import Request, Response, json_response
 from botbuilder.core import (
@@ -17,6 +18,19 @@ from botbuilder.schema import Activity, ActivityTypes
 
 from bots import EchoBot
 from config import DefaultConfig
+import os
+
+client_id = os.getenv('AZURE_CLIENT_ID')
+tenant_id = os.getenv('AZURE_TENANT_ID')
+client_secret = os.getenv('AZURE_CLIENT_SECRET')
+
+# Print to verify (remove in production)
+print(f"Client ID: {client_id}")
+print(f"Tenant ID: {tenant_id}")
+print(f"Client Secret: {client_secret}")
+
+if not all([client_id, tenant_id, client_secret]):
+    raise EnvironmentError("Please set the AZURE_CLIENT_ID, AZURE_TENANT_ID, and AZURE_CLIENT_SECRET environment variables.")
 
 CONFIG = DefaultConfig()
 
@@ -57,7 +71,6 @@ ADAPTER.on_turn_error = on_error
 
 # Create the Bot
 BOT = EchoBot()
-
 
 # Listen for incoming requests on /api/messages
 async def messages(req: Request) -> Response:
