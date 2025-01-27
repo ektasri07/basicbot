@@ -5,4 +5,3 @@ azure.identity
 azure.mgmt.costmanagement
 azure-core
 matplotlib
-plt
