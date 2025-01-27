@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'costsearch'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8CD56743E8CF4CA9A0F072AF0B662149 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB4D146AE9E846FF88791DFA02958803 }}
